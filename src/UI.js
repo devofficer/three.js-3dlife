@@ -758,6 +758,10 @@ const UI = observer(() => {
   const [isCategory, setIsCategory] = useState(false);
   const { isAdd, setAdd } = useState(false);
 
+  const handleAdd = (type) => {
+    loadDoor();
+  };
+
   function AssignVal(e) {
     STORE[e.target.id] = e.target.value;
     if (door !== null) {
@@ -960,7 +964,12 @@ const UI = observer(() => {
               <div className="card m-2 d-flex align-items-center text-center p-2 rounded">
                 <span className="m-2">Door</span>
                 <img style={{ width: "80px" }} src="assets/ui/door.svg"></img>
-                <div className="btn m-2 rounded-5 shadow-sm">Add to Plan +</div>
+                <div
+                  className="btn m-2 rounded-5 shadow-sm"
+                  onClick={handleAdd}
+                >
+                  Add to Plan +
+                </div>
               </div>
               <div className="card m-2 d-flex align-items-center text-center p-2 rounded">
                 <span className="m-2">Window</span>
